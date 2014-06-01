@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Cygwin smile : " />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Cygwin smile</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/kanedayo/cygwin_smile">View on GitHub</a>
+
+          <h1 id="project_title">Cygwin smile</h1>
+          <h2 id="project_tagline"></h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/kanedayo/cygwin_smile/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/kanedayo/cygwin_smile/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="cygwin_smile" class="anchor" href="#cygwin_smile"><span class="octicon octicon-link"></span></a>cygwin_smile</h1>
+
+<h1>
+<a name="cygwin%E3%81%A7dll%E3%81%AB%E4%BE%9D%E5%AD%98%E3%81%97%E3%81%AA%E3%81%84exe%E3%81%AE%E4%BD%9C%E3%82%8A%E6%96%B9" class="anchor" href="#cygwin%E3%81%A7dll%E3%81%AB%E4%BE%9D%E5%AD%98%E3%81%97%E3%81%AA%E3%81%84exe%E3%81%AE%E4%BD%9C%E3%82%8A%E6%96%B9"><span class="octicon octicon-link"></span></a>Cygwinでdllに依存しないexeの作り方</h1>
+
+<h3>
+<a name="%E6%BA%96%E5%82%99" class="anchor" href="#%E6%BA%96%E5%82%99"><span class="octicon octicon-link"></span></a>準備</h3>
+
+<p>Cygwin Setupで「mingw64-x86_64-gcc-core」 をインストール</p>
+
+<h3>
+<a name="%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AE%E4%BD%9C%E6%88%90" class="anchor" href="#%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AE%E4%BD%9C%E6%88%90"><span class="octicon octicon-link"></span></a>アイコンファイルの作成</h3>
+
+<pre><code>wget magna.ico
+vi magna.rc
+MAGNA_ICON ICON magna.ico
+</code></pre>
+
+<h3>
+<a name="%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%AB" class="anchor" href="#%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%AB"><span class="octicon octicon-link"></span></a>コンパイル</h3>
+
+<pre><code>windres.exe -i icon.rc icon.o
+x86_64-w64-mingw32-gcc -mwindows -o magna magna.c icon.o
+</code></pre>
+
+<h3>
+<a name="%E5%8F%82%E8%80%83" class="anchor" href="#%E5%8F%82%E8%80%83"><span class="octicon octicon-link"></span></a>参考</h3>
+
+<p><a href="http://d.hatena.ne.jp/wlt/20111231/1325289060">Cygwinでdllに依存しないexeの作り方</a></p>
+
+<p><a href="http://www.cs.hiroshima-u.ac.jp/%7Eyasuaki/dokuwiki/cygwin">アイコンの作成法</a></p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Cygwin smile maintained by <a href="https://github.com/kanedayo">kanedayo</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
