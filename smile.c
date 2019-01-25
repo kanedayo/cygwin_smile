@@ -29,8 +29,8 @@ int main(int argc,char**argv)
       fprintf(fo,"%s(^^)/~\n",st);
     }
 
-    close(fi);
-    close(fo);
+    fclose(fi);
+    fclose(fo);
     return 0;
 
   } else {
